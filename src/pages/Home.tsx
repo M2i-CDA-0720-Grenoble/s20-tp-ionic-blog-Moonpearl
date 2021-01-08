@@ -1,8 +1,14 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React, { FC } from 'react';
+import { Article } from '../components';
+import { articles } from '../data';
 import './Home.css';
 
 const Home: FC = () => {
+  const sortedArticles = articles.sort(
+    (article1, article2) => Number(article2.createdAt) - Number(article1.createdAt)
+  );
+
   return (
     <IonPage>
       <IonHeader>
@@ -17,10 +23,7 @@ const Home: FC = () => {
           </IonToolbar>
         </IonHeader>
 
-        <div className="Home-content">
-          <strong>Ready to create an app?</strong>
-          <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-        </div>
+        <Article.List articles={sortedArticles} />
 
       </IonContent>
     </IonPage>
