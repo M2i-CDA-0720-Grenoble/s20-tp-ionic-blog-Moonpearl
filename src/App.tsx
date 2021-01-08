@@ -1,7 +1,6 @@
-import React, { lazy, Suspense } from 'react';
-import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
+import React, { FC } from 'react';
+import { IonApp } from '@ionic/react';
+import { Navigation } from './components';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -22,20 +21,9 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-const Home = lazy( () => import('./pages/Home') );
-const AllCategories = lazy( () => import('./pages/AllCategories') );
-
-const App: React.FC = () => (
+const App: FC = () => (
   <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Suspense fallback={() => <div>Loading...</div>}>
-          <Route path="/articles" component={Home} exact={true} />
-          <Route exact path="/" render={() => <Redirect to="/articles" />} />
-          <Route path="/categories" component={AllCategories} exact={true} />
-        </Suspense>
-      </IonRouterOutlet>
-    </IonReactRouter>
+    <Navigation />
   </IonApp>
 );
 

@@ -1,5 +1,5 @@
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from "@ionic/react";
 import React, { FC } from "react";
+import { Layout } from "../components";
 import Category from "../components/Category";
 import { categories } from "../data";
 
@@ -16,23 +16,11 @@ const AllCategories: FC = () => {
   );
 
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Categories</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Categories</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+    <Layout title="Categories">
 
-        <Category.List categories={sortedCategories} />
+      <Category.List categories={sortedCategories} />
 
-      </IonContent>
-    </IonPage>
+    </Layout>
   )
 }
 

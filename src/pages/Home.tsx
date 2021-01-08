@@ -1,6 +1,5 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React, { FC } from 'react';
-import { Article } from '../components';
+import { Article, Layout } from '../components';
 import { articles } from '../data';
 import './Home.css';
 
@@ -10,23 +9,11 @@ const Home: FC = () => {
   );
 
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Articles</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Articles</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+    <Layout title="Article">
 
-        <Article.List articles={sortedArticles} />
+      <Article.List articles={sortedArticles} />
 
-      </IonContent>
-    </IonPage>
+    </Layout>
   );
 };
 
