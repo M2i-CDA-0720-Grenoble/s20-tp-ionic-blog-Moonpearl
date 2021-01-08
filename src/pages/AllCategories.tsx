@@ -1,6 +1,5 @@
 import React, { FC } from "react";
-import { Layout } from "../components";
-import Category from "../components/Category";
+import { Category, Layout } from "../components";
 import { categories } from "../data";
 
 const AllCategories: FC = () => {

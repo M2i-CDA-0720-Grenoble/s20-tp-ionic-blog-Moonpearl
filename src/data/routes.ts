@@ -5,6 +5,7 @@ import { Route } from "../models";
 const Home = lazy( () => import('../pages/Home') );
 const AllCategories = lazy( () => import('../pages/AllCategories') );
 const SingleArticle = lazy( () => import('../pages/SingleArticle') );
+const SingleCategory = lazy( () => import('../pages/SingleCategory') );
 
 const routes: Route[] = [
   {
@@ -30,6 +31,13 @@ const routes: Route[] = [
     name: 'articles_single',
     displayTab: false,
     Component: SingleArticle,
+  },
+
+  {
+    uri: '/categories/:id(\\d+)',
+    name: 'categories_single',
+    displayTab: false,
+    Component: SingleCategory,
   }
 ];
 

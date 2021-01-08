@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { RouteComponentProps } from "react-router";
+import { Redirect, RouteComponentProps } from "react-router";
 import { Article, Layout } from "../components";
 import { articles } from "../data";
 
@@ -10,7 +10,7 @@ const SingleArticle: FC<RouteComponentProps<TParams>> = ({ match }) => {
   const article = articles.find( article => article.id === id );
   
   if (typeof article === 'undefined') {
-    return <div/>;
+    return <Redirect to="/" />;
   }
 
   return (

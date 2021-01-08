@@ -11,7 +11,7 @@ const CategoryPreview: FC<CategoryPreviewProps> = ({ category }) => {
   const articleCount = articles.filter( article => article.category.id === category.id ).length;
 
   return (
-    <IonItem>
+    <IonItem routerLink={`/categories/${category.id}`}>
       {category.name} ({articleCount})
     </IonItem>
   );
