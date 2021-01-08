@@ -8,8 +8,8 @@ interface ArticlePreviewProps {
   article: Article,
 }
 
-const ArticlePreview: FC<ArticlePreviewProps> = ({ article: { cover, category, content, title, createdAt } }) =>
-  <IonCard>
+const ArticlePreview: FC<ArticlePreviewProps> = ({ article: { id, cover, category, content, title, createdAt } }) =>
+  <IonCard routerLink={`/articles/${id}`}>
     <img src={cover} alt={`Cover for article: ${title}`} />
 
     <IonCardHeader>

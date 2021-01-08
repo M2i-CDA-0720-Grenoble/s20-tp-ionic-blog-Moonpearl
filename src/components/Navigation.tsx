@@ -1,4 +1,4 @@
-import { IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon, IonLabel } from "@ionic/react";
+import { IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon, IonLabel, IonLoading } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import React, { FC, Suspense } from "react";
 import { Route, Redirect } from "react-router";
@@ -9,14 +9,17 @@ const Navigation: FC = () =>
 
     <IonTabs>
       <IonRouterOutlet>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<IonLoading
+          isOpen
+          message={'Please wait...'}
+        />}>
 
           {
             routes.map(
               (route, index) =>
                 <Route
                   key={index}
-                  path={`/tabs/:tab(${route.name})`}
+                  path={ route.displayTab ? `/tabs/:tab(${route.name})` : route.uri }
                   component={route.Component}
                   exact={true}
                 />

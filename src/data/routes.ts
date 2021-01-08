@@ -4,6 +4,7 @@ import { Route } from "../models";
 
 const Home = lazy( () => import('../pages/Home') );
 const AllCategories = lazy( () => import('../pages/AllCategories') );
+const SingleArticle = lazy( () => import('../pages/SingleArticle') );
 
 const routes: Route[] = [
   {
@@ -23,6 +24,13 @@ const routes: Route[] = [
     displayTab: true,
     Component: AllCategories,
   },
+
+  {
+    uri: '/articles/:id(\\d+)',
+    name: 'articles_single',
+    displayTab: false,
+    Component: SingleArticle,
+  }
 ];
 
 export default routes;

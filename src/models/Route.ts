@@ -6,5 +6,5 @@ export default interface Route {
   icon?: string,
   text?: string,
   displayTab: boolean,
-  Component: FC,
+  Component: FC<any>,
 }

@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 interface MarkupContainerProps {
   html: string,
-  className: string,
+  className?: string,
 }
 
 const MarkupContainer: FC<MarkupContainerProps> = ({ html, ...props }) =>

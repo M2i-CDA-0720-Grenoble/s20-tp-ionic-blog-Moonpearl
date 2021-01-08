@@ -9,7 +9,7 @@ const Home: FC = () => {
   );
 
   return (
-    <Layout title="Article">
+    <Layout title="Articles">
 
       <Article.List articles={sortedArticles} />
 
